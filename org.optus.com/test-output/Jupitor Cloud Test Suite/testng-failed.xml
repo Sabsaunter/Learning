@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Jupitor Cloud Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Shop Page Scenarios(failed)">
+    <classes>
+      <class name="testCases.Shop_Test_Case">
+        <methods>
+          <include name="LaunchBrowser"/>
+          <include name="CartValidations"/>
+          <include name="TearDown"/>
+        </methods>
+      </class> <!-- testCases.Shop_Test_Case -->
+    </classes>
+  </test> <!-- Shop Page Scenarios(failed) -->
+</suite> <!-- Failed suite [Jupitor Cloud Test Suite] -->

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Jupitor Cloud Test Suite" verbose="2"
+	parallel="methods" thread-count="3">
+
+	<test name="Contact Page Positive Scenarios">
+		<classes>
+			<class name="testCases.ContactPage_Positive_Test_Case" />
+		</classes>
+	</test>
+
+	<test name="Contact Page Negative Scenarios">
+		<classes>
+			<class name="testCases.ContactPage_Negative_Test_Case" />
+		</classes>
+	</test>
+
+	<test name="Shop Page Scenarios">
+		<classes>
+			<class name="testCases.Shop_Test_Case" />
+		</classes>
+	</test>
+
+</suite>
+
+
