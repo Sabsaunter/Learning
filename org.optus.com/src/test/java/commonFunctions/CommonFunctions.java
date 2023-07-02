@@ -3,11 +3,12 @@ package commonFunctions;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -16,8 +17,7 @@ public class CommonFunctions {
 	public static Properties properties;
 	public static WebDriver driver=null;
 
-
-	public void LoadPropertyFile(){
+	private synchronized void LoadPropertyFile(){
 
 		properties = new Properties();
 		try {
@@ -29,8 +29,8 @@ public class CommonFunctions {
 	}
 
 	@SuppressWarnings("deprecation")
-	@BeforeSuite
-	public void LaunchBrowser() throws IOException {
+	@BeforeTest
+	public synchronized void LaunchBrowser() throws IOException {
 
 		LoadPropertyFile();		
 
@@ -59,9 +59,10 @@ public class CommonFunctions {
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 
-	@AfterSuite
+	@AfterTest
 	public void TearDown() {
 		driver.quit();
 	}
+	
 
 }
