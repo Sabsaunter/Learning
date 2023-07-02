@@ -26,29 +26,28 @@ public class Contact_Page_Objects {
 	public static void forenameError(WebDriver driver) {
 		errorValidation(driver,"forename-err", "Forename is required");
 	}
-
-	public static WebElement emailError(WebDriver driver) {
-		return driver.findElement(By.id("email-err"));
+	
+	public static void emailError(WebDriver driver) {
+		errorValidation(driver,"email-err", "Email is required");
 	}
-	public static WebElement messageError(WebDriver driver) {
-		return driver.findElement(By.id("message-err"));	
+	
+	public static void messageError(WebDriver driver) {
+		errorValidation(driver,"message-err", "Message is required");
 	}
 	
 	private static void errorValidation(WebDriver driver, String Value, String ErrorMessage) {
 		boolean errorExists = false;
 		try {
 			driver.findElement(By.id(Value));
-		  } catch (Exception e) { // error thrown is: "NoSuchElementError: no such element"
+		  } catch (Exception e) {
 			 errorExists = true;
 		  }
 
 		  if (errorExists) {
-			  System.out.println("ghjtgyubn");
-			Allure.step("Hiiiiiii");
+			  Allure.step("Error Message "+ErrorMessage+" Disappered after inputing Mandatory field");
 		  } else {
 			 if(ErrorMessage.equals(driver.findElement(By.id(Value)).getText())) {
-				 System.out.println("fghjkty");
-				 	Allure.step("dfghjk");
+				 Allure.step("Error Message..Please input value for "+ErrorMessage+" Field");
 			 }
 		  }
 	}
