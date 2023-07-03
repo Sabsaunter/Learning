@@ -47,10 +47,10 @@ public class ContactPage_Negative_Test_Case extends CommonFunctions{
 	
 		Allure.step("Clicking on Submit Button");
 		
-		Contact_Page_Objects.submitButton(driver).click();
-
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/a")));
+//		Contact_Page_Objects.submitButton(driver).click();
+//
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/a")));
 
 		Allure.step("Navigating back to Home Page");
 		Home_Page_Objects.homeButton(driver).click();

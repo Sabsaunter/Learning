@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Jupitor Cloud Test Suite" verbose="2"
-	thread-count="3" parallel="classes">
+	thread-count="3" parallel="tests">
 
 	<test name="Contact Page Positive Scenarios">
 		<classes>
@@ -23,5 +23,3 @@
 	</test>
 
 </suite>
-
-
